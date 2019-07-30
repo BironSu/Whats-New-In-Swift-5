@@ -47,3 +47,26 @@ for char in sentence {
         print("punctuation: \(char)")
     }
 }
+
+//==========================================================================
+// Review map, filter, flatmap
+//==========================================================================
+
+let tweets = [ "starting the fall cycle at #pursuit",
+               "#darnclosures are killing me",
+               "dreams of an #ios #developer",
+               "#swiftui is dope, #iosdeveloper #mindblown"
+]
+
+// use map, filter and flatmap to return an array of hashtags
+// output: ["#pursuit", "#darnclosures", "#ios", "#developer", "#swiftui", "#iosdeveloper", "#mindblown"]
+
+// Hint: create a function that takes in a string and returns an array
+
+func getHashtags(input: String) -> [String] {
+    let newArray = input.components(separatedBy: " ")
+    return newArray.filter{$0.starts(with: "#")}
+}
+
+let tags = tweets.map{getHashtags(input: $0)}.flatMap{$0}
+print(tags)
