@@ -92,3 +92,18 @@ let dictionaryOfNums = [2: 2, 3: 3, 4: 4, 5: 5]
 
 let mapValueOutput = dictionaryOfNums.mapValues{$0 * $0}
 print(mapValueOutput)
+
+//==========================================================================
+// New in Swift 5.0: compactMapValues
+//==========================================================================
+
+let cities = ["Stockholm" : true,
+              "Tokyo" : nil,
+              "Boston" : true,
+              "San Francisco" : true,
+              "London" : nil]
+// perform compactMapValues on cities to return non-nil elements
+// output ["Stockholm" : true, "Boston" : true, "San Francisco": true]
+
+let trueCities = cities.compactMapValues{$0}
+print(trueCities)
