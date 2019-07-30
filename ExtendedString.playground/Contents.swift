@@ -84,3 +84,11 @@ print(nums)
 //==========================================================================
 // Review mapValues
 //==========================================================================
+
+let dictionaryOfNums = [2: 2, 3: 3, 4: 4, 5: 5]
+
+// given dictionaryOfNums square each value
+// output: [2: 4, 3: 9, 4: 16, 5: 25]
+
+let mapValueOutput = dictionaryOfNums.mapValues{$0 * $0}
+print(mapValueOutput)
