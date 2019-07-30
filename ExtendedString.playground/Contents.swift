@@ -70,3 +70,17 @@ func getHashtags(input: String) -> [String] {
 
 let tags = tweets.map{getHashtags(input: $0)}.flatMap{$0}
 print(tags)
+
+//==========================================================================
+// Review compactMap
+//==========================================================================
+let numStrings = ["1", "a", "&", "9", "54", "🎉"]
+
+// use compactMap to return only valid numbers from numStrings
+
+let nums = numStrings.compactMap{Int($0)}
+print(nums)
+
+//==========================================================================
+// Review mapValues
+//==========================================================================
